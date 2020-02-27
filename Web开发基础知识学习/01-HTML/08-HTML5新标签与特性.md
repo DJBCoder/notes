@@ -19,15 +19,10 @@
 # 常用新标签
 
 - header：定义文档的页眉 头部
-
 - nav：定义导航链接的部分
-
 - footer：定义文档或节的页脚 底部
-
 - article：定义文章。
-
 - section：定义文档中的节（section、区段）
-
 - aside：定义其所处内容之外的内容 侧边
 
 ```html
@@ -67,43 +62,40 @@
 
  类型       | 使用示例            | 含义 
 -| - | - | - 
- email    | <input type="email">    | 输入邮箱格式     
- tel      | <input type="tel">      | 输入手机号码格式   
- url      | <input type="url">      | 输入url格式    
- number   | <input type="number">   | 输入数字格式     
- search   | <input type="search">   | 搜索框（体现语义化） 
- range    | <input type="range">    | 自由拖动滑块     
- time     | <input type="time">     | 小时分钟       
- date     | <input type="date">     | 年月日        
- datetime | <input type="datetime"> | 时间         
- month    | <input type="month">    | 月年         
- week     | <input type="week">     | 星期 年       
+ email    | &lt;input type="email"&gt;| 输入邮箱格式     
+ tel      | &lt;input type="tel"&gt;| 输入手机号码格式   
+ url      | &lt;input type="url"&gt;| 输入url格式    
+ number   | &lt;input type="number"&gt;| 输入数字格式     
+ search   | &lt;input type="search"&gt;| 搜索框（体现语义化） 
+ range    | &lt;input type="range"&gt;7| 自由拖动滑块     
+ time     | &lt;input type="time"&gt;| 小时分钟       
+ date     | &lt;input type="date"&gt;| 年月日        
+ datetime | &lt;input type="datetime"&gt;| 时间         
+ month    | &lt;input type="month"&gt;| 月年         
+ week     | &lt;input type="week"&gt;| 星期 年       
 
 
 # 常用新属性
 
- 属性           | 用法 | 含义 
- - | - | - 
-placeholder  | <input type="text" placeholder="请输入用户名"> |占位符当用户输入的时候 里面的文字消失 删除所有文字，自动返回       
-autofocus    | <input type="text" autofocus>            | 规定当页面加载时 input 元素应该自动获得焦点                
-multiple     | <input type="file" multiple>             | 多文件上传                                    
-autocomplete | <input type="text" autocomplete="off">   | 规定表单是否应该启用自动完成功能  有2个值，一个是on 一个是off      on 代表记录已经输入的值  1.autocomplete 首先需要提交按钮 <br/>2.这个表单您必须给他名字 
-required     | <input type="text" required>             | 必填项  内容不能为空                              
-accesskey    | <input type="text" accesskey="s">        | 规定激活（使元素获得焦点）元素的快捷键   采用 alt + s的形式      
+ 属性 | 用法 | 含义 
+ -|-|- 
+placeholder  | &lt;input type="text" placeholder="请输入用户名"&gt;|占位符当用户输入的时候 里面的文字消失 删除所有文字，自动返回       
+autofocus    | &lt;input type="text" autofocus&gt;| 规定当页面加载时 input 元素应该自动获得焦点                
+multiple     |&lt;input type="file" multiple&gt;| 多文件上传                                    
+autocomplete|&lt;input type="text" autocomplete="off"&gt;| 规定表单是否应该启用自动完成功能  有2个值，一个是on 一个是off      on 代表记录已经输入的值  1.autocomplete 首先需要提交按钮 <br/>2.这个表单您必须给他名字 
+required     | &lt;input type="text" required&gt; | 必填项  内容不能为空                              
+accesskey    | &lt;input type="text" accesskey="s"&gt; | 规定激活（使元素获得焦点）元素的快捷键   采用 alt + s的形式      
 
 # 多媒体标签
 
 - embed：标签定义嵌入的内容
-
 - audio：播放音频
-
 - video：播放视频
-
 
 ## 多媒体embed
 &emsp;&emsp;embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU、MP3等等。url为音频或视频文件及其路径，可以是相对路径或绝对路径。
 
-&emsp;&emsp;因为兼容性问题，我们这里只讲解 插入网络视频， 后面H5会讲解 audio 和video 视频多媒体。 
+&emsp;&emsp;因为兼容性问题，我们这里只讲解 插入网络视频，后面H5会讲解 audio 和video 视频多媒体。 
 
 ```html
 <embed src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
@@ -111,8 +103,53 @@ accesskey    | <input type="text" accesskey="s">        | 规定激活（使元�
 
 ## 多媒体 audio
 
-HTML5通过&lt;audio&gt;标签来解决音频播放的问题。使用相当简单，如下所示:
+&emsp;&emsp;HTML5通过&lt;audio&gt;标签来解决音频播放的问题。使用相当简单，如下所示:
 
 ```html
-<audio src="路径">
+<audio src="路径"></audio>
+```
+
+&emsp;&emsp;并且可以通过附加属性可以更友好控制音频的播放，如：
+
++ autoplay：自动播放
++ controls：是否显不默认播放控件
++ loop：循环播放，"loop = 2" 就是循环2次，"loop" 或者"loop = -1"是无限循环
+
+> *__注意：由于版权等原因，不同的浏览器可支持播放的格式是不一样的，如下图供参考__*，
+
+&emsp;&emsp;多浏览器支持的方案，如下：
+
+```html
+<audio controls>
+  <source src="./a.mp3">
+  <source src="./a.wav">
+  <source src="./a.ogg">
+  您的浏览器不支持HTML音频播放功能
+</audio>
+```
+
+## 多媒体 video
+
+&emsp;&emsp;HTML5通过&lt;audio&gt;标签来解决音频播放的问题。同音频播放一样，&lt;video&gt;使用也相当简单，如下:
+
+```html
+<video src="./movie.mp4" controls="controls"></video>
+```
+
+&emsp;&emsp;同样，通过附加属性可以更友好的控制视频的播放：
+
++ autoplay：自动播放
++ controls：是否显示默认播放控件
++ loop：循环播放
++ width：设置播放窗口宽度
++ height：设置播放窗口的高度
+
+&emsp;&emsp;由于版权等原因，不同的浏览器可支持播放的格式是不一样的，多浏览器支持的方案，如下：
+
+```html
+<video>
+<source src="./movie.ogg">
+<source src="./movie.mp4">
+您的浏览器不支持HTML视频的播放
+</video>
 ```
