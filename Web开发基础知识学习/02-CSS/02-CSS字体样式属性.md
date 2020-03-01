@@ -207,7 +207,7 @@ p {
 <body>
     <!-- 完整版本 -->
     <p 
-    style="font: normal 400 10px '微软雅黑';">
+    style="font: italic 400 10px '微软雅黑';">
     完整的字体综合样式</p>
 
     <!-- 省略版本 -->
