@@ -26,36 +26,42 @@
 - aside：定义其所处内容之外的内容 侧边
 
 ```html
-  <header> 语义 :定义页面的头部  页眉</header>
-  <nav>  语义 :定义导航栏 </nav> 
-  <footer> 语义: 定义 页面底部 页脚</footer>
-  <article> 语义:  定义文章</article>
-  <section> 语义： 定义区域</section>
-  <aside> 语义： 定义其所处内容之外的内容 侧边</aside>
+<!-- 01-常用标签 -->
+<body>
+    <header>语义：定义页面的头部、页眉</header>
+    <nav>语义：定义导航栏</nav>
+    <footer>语义：定义页面底部、页脚</footer>
+    <article>语义：定义文章</article>
+    <section>语义：定义区域（文章中的节）</section>
+    <aside>语义：侧边（定义其所处内容之外的内容）</aside>
+</body>
 ```
 
 - datalist：标签定义选项列表。请与 input 元素配合使用该元素
 
 ```html
-  <input type="text" value="输入明星" list="star"/> <!--  input里面用 list -->
-  <datalist id="star">   <!-- datalist 里面用 id  来实现和 input 链接 -->  
-      		<option>刘德华</option>
-      		<option>刘若英</option>
-      		<option>刘晓庆</option>
-      		<option>郭富城</option>
-      		<option>张学友</option>
-      		<option>郭郭</option>
-  </datalist>
+<!-- 02-datalist -->
+<body>
+    <input type="text" value="选择你喜欢的运动"
+    list="sports">
+    <datalist id="sports">
+        <option>篮球</option>
+        <option>足球</option>
+    </datalist>
+</body>
 ```
 
 - fieldset：该元素可将表单内的相关元素分组，打包，与legend搭配使用
 
 ```html
-  <fieldset>
-      		<legend>用户登录</legend>  标题
-      		用户名: <input type="text"><br /><br />
-      		密　码: <input type="password">
-  </fieldset>
+<!-- 03-fieldset -->
+<body>
+    <fieldset>
+        <legend>用户登陆</legend>
+        用户名：<input type="text"><br>
+        密&nbsp;码：<input type="password">
+    </fieldset>
+</body>
 ```
 
 # 新增的input type属性值
@@ -72,19 +78,69 @@
  date     | &lt;input type="date"&gt;| 年月日        
  datetime | &lt;input type="datetime"&gt;| 时间         
  month    | &lt;input type="month"&gt;| 月年         
- week     | &lt;input type="week"&gt;| 星期 年       
+ week     | &lt;input type="week"&gt;| 星期 年   
+color     | &lt;input type="color"&gt;| 选择颜色 
 
+```html
+<!-- 04-新增type属性类型 -->
+<body>
+    <fieldset>
+        <legend>HTML5新增type类型</legend>
+        <form action="#">
+            email：<input type="email"><br>
+            tel：<input type="tel"><br>
+            url：<input type="url"><br>
+            number：<input type="number"><br>
+            search：<input type="search"><br>
+            range：<input type="range"><br>
+            time：<input type="time"><br>
+            datetime：<input type="datetime"><br>
+            date：<input type="date"><br>
+            month：<input type="month"><br>
+            week：<input type="week"><br>
+            color：<input type="color"><br>
+            <input type="submit" value="提交">
+        </form>
+    </fieldset>
+</body>
+```
+
+> 在手机端的显示效果更为明显，比如：type为number的时候，手机上会弹出数字键盘
 
 # 常用新属性
 
  属性 | 用法 | 含义 
  -|-|- 
-placeholder  | &lt;input type="text" placeholder="请输入用户名"&gt;|占位符当用户输入的时候 里面的文字消失 删除所有文字，自动返回       
-autofocus    | &lt;input type="text" autofocus&gt;| 规定当页面加载时 input 元素应该自动获得焦点                
-multiple     |&lt;input type="file" multiple&gt;| 多文件上传                                    
-autocomplete|&lt;input type="text" autocomplete="off"&gt;| 规定表单是否应该启用自动完成功能  有2个值，一个是on 一个是off      on 代表记录已经输入的值  1.autocomplete 首先需要提交按钮 <br/>2.这个表单您必须给他名字 
-required     | &lt;input type="text" required&gt; | 必填项  内容不能为空                              
-accesskey    | &lt;input type="text" accesskey="s"&gt; | 规定激活（使元素获得焦点）元素的快捷键   采用 alt + s的形式      
+placeholder  | &lt;input type="text" placeholder="请输入用户名"&gt;|占位符当用户输入的时候里面的文字消失，删除所有文字自动返回提示信息
+autofocus    | &lt;input type="text" autofocus&gt;| 规定当页面加载时input元素应该自动获得焦点
+multiple     |&lt;input type="file" multiple&gt;| 多文件上传
+autocomplete|&lt;input type="text" autocomplete="off"&gt;| 规定表单是否应该启用自动完成功能，有2个值：on、off。on代表记录已经输入的值 <br> 1.autocomplete 首先需要提交按钮 <br/>2.这个表单必须给他名字（name属性）
+required     | &lt;input type="text" required&gt; | 必填项内容不能为空
+accesskey    | &lt;input type="text" accesskey="s"&gt; | 规定激活（使元素获得焦点）元素的快捷键   采用 alt + s的形式
+
+```html
+<!-- 05-新增属性 -->
+<body>
+    <form action="#">
+        <!-- placeholder 占位符 -->
+        <!-- autofocus 自动获取焦点 -->
+        <!-- autocomplete自动完成 -->
+        <!-- required 必须填 -->
+        用户名：<input type="text" 
+        placeholder="请输入你的用户名"
+        autofocus
+        autocomplete="on"
+        required name="username"> <br>
+
+        <!-- 快捷键获取焦点  alt + s-->
+        姓名：<input type="text" accesskey="s"><br>
+
+        <!-- 多文件上传 -->
+        文件上传：<input type="file" multiple><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+```
 
 # 多媒体标签
 
@@ -95,14 +151,28 @@ accesskey    | &lt;input type="text" accesskey="s"&gt; | 规定激活（使元�
 ## 多媒体embed
 &emsp;&emsp;embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU、MP3等等。url为音频或视频文件及其路径，可以是相对路径或绝对路径。
 
-&emsp;&emsp;因为兼容性问题，我们这里只讲解 插入网络视频，后面H5会讲解 audio 和video 视频多媒体。 
+> *__注意：__* 因为兼容性问题，这里只演示插入网络视频，后面H5会用 audio 和video 视频多媒体。 
+
+1. 将视频上传到优酷、土豆等网页，或者直接找一个视频
+2. 打开视频，点击分享，然后复制html的分享
+3. 粘贴到自己的网页中
 
 ```html
-<embed src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+<!-- 06-embend -->
+<body>
+    <embed src="//player.video.iqiyi.com/0a428688c3d38aed4630240961646a29/0/0/v_19rxjk5zus.swf-albumId=13397439400-tvId=13397439400-isPurchase=0-cnId=undefined" 
+    allowFullScreen="true" 
+    quality="high" 
+    width="480" 
+    height="350" 
+    align="middle" 
+    allowScriptAccess="always" 
+    type="application/x-shockwave-flash">
+    </embed>
+</body>
 ```
 
 ## 多媒体 audio
-
 &emsp;&emsp;HTML5通过&lt;audio&gt;标签来解决音频播放的问题。使用相当简单，如下所示:
 
 ```html
@@ -115,18 +185,20 @@ accesskey    | &lt;input type="text" accesskey="s"&gt; | 规定激活（使元�
 + controls：是否显不默认播放控件
 + loop：循环播放，"loop = 2" 就是循环2次，"loop" 或者"loop = -1"是无限循环
 
-> *__注意：由于版权等原因，不同的浏览器可支持播放的格式是不一样的，如下图供参考__*，
-
-&emsp;&emsp;多浏览器支持的方案，如下：
+&emsp;&emsp;由于版权等原因，不同的浏览器可支持播放的格式是不一样的，多浏览器支持的方案如下：
 
 ```html
-<audio controls>
-  <source src="./a.mp3">
-  <source src="./a.wav">
-  <source src="./a.ogg">
-  您的浏览器不支持HTML音频播放功能
-</audio>
+<!-- 07-audio -->
+<body>
+    <audio controls autoplay loop="-1">
+        <source src="./assets/bgsound.mp3">
+        <source src="./assets/music.ogg">
+        您的浏览器不支持HTML音频播放功能
+      </audio>
+</body>
 ```
+
+&emsp;&emsp;浏览器会依次读取source的文件，直到浏览器支持为止，如果都不支持，则显示最下面的提示文字。
 
 ## 多媒体 video
 
