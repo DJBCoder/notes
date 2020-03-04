@@ -57,19 +57,6 @@
 </script>
 ```
 
-&emsp;&emsp;下面是一个通过CDN引入方式使用Vue的案例：
-
-1. 创建一个项目的文件夹 *__02-VueJS介绍__*
-2. 创建一个.html的文件 *__01-通过CDN的方式引入Vue.html__*
-3. 在html文件中引入Vue.js文件
-
-```html
-<!-- 01-通过CDN的方式引入Vue.html -->
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</body>
-```
-
 > *__也可以从网上下载最新版本的vue.js或者vue.min.js文件，然后通过本地相对路径的方式引入该文件__*
 
 ## NPM
