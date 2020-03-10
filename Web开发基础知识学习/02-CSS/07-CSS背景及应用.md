@@ -1,28 +1,17 @@
 @[toc](CSS背景及应用)
 
-&emsp;&emsp;CSS可以添加背景颜色和背景图片，以及来进行图片设置。
 
-background-color | 背景颜色
--|-
-background-image | 背景图片地址
-background-repeat | 是否平铺
-background-position | 背景位置
-background-attachment | 背景固定还是滚动
-背景的合写（复合属性）|background:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置
 
 # 背景图片(image)
 &emsp;&emsp;语法： 
 
 ```css
-background-image : none | url (url)
+
 ```
 
-+ none：无背景图（默认的）
-+ url：使用绝对或相对地址指定背景图像
 
-&emsp;&emsp;background-image属性允许指定一个图片展示在背景中（只有CSS3才可以多背景），可以和 background-color连用。如果图片不重复地话，图片覆盖不到地地方都会被背景色填充；如果有背景图片平铺，则会覆盖背景颜色。
 
-> 提倡背景图片后面的地址url不要加引号
+
 
 # 背景平铺（repeat）
 
